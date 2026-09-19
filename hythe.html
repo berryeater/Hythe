@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hythe Island Community Forums - Official Village Homepage</title>
+<style>
+:root{--red:#c40000;--dark:#5a0000;--gold:#f8d500;--paper:#f4ead0;--row1:#fff8e1;--row2:#f0e2b8;--ink:#222;--link:#0000cc}
+*{box-sizing:border-box}
+body{margin:0;padding:12px;font:12px Verdana,Tahoma,Arial,sans-serif;color:var(--ink);
+ background-color:#3a0000;
+ background-image:linear-gradient(45deg,#4a0000 25%,transparent 25%,transparent 75%,#4a0000 75%),linear-gradient(45deg,#4a0000 25%,transparent 25%,transparent 75%,#4a0000 75%);
+ background-size:16px 16px;background-position:0 0,8px 8px}
+a{color:var(--link)} a:visited{color:#660099} a:hover{color:#ff0000;text-decoration:underline}
+#wrap{max-width:960px;margin:0 auto;background:var(--paper);border:3px ridge var(--gold);box-shadow:0 0 0 2px #000}
+#banner{background:linear-gradient(#e00000,#8b0000);border-bottom:4px double var(--gold);display:flex;align-items:center;justify-content:space-between;padding:8px 14px;gap:10px}
+#banner h1{margin:0;font:bold 40px Impact,'Arial Black',sans-serif;letter-spacing:4px;color:var(--gold);text-shadow:2px 2px 0 #000,-1px -1px 0 #7a5c00;text-align:center}
+#banner p{margin:2px 0 0;color:#fff;font-style:italic;text-align:center}
+#banner svg{height:90px;width:auto;flex:none;border:2px solid var(--gold);background:var(--red)}
+#nav{background:#000;border-bottom:2px solid var(--gold);text-align:center;padding:5px}
+#nav a{color:var(--gold);font-weight:bold;text-decoration:none;padding:0 8px;border-right:1px solid #666}
+#nav a:last-child{border:0} #nav a:hover{color:#fff;background:var(--red)}
+#ticker{background:var(--gold);border-bottom:1px solid #000;padding:3px;font-weight:bold;color:#800}
+#cols{display:flex;gap:8px;padding:8px;align-items:flex-start}
+#main{flex:1;min-width:0} #side{width:220px;flex:none}
+.box{border:1px solid #000;margin-bottom:10px;background:#fff}
+.box>h2{margin:0;padding:4px 8px;font:bold 12px Verdana,sans-serif;color:var(--gold);background:linear-gradient(#d00000,#7a0000);border-bottom:1px solid #000}
+.box .in{padding:6px 8px}
+table{border-collapse:collapse;width:100%}
+th{background:linear-gradient(#f8d500,#c9a800);border:1px solid #000;padding:4px;font-size:11px;text-align:left}
+td{border:1px solid #8a7a4a;padding:5px;vertical-align:middle}
+tr.cat td{background:#7a0000;color:var(--gold);font-weight:bold;font-size:12px}
+tr.f td:nth-child(1){background:var(--row1)} tr.f td:nth-child(2){background:var(--row2)}
+tr.f td:nth-child(n+3){background:var(--row1);text-align:center;font-size:11px}
+tr.f td:nth-child(3){background:var(--row2)}
+.f b a{font-size:13px} .sm{font-size:10px;color:#555}
+.mod{color:#a00;font-weight:bold} .king{color:#b8860b;font-weight:bold;text-shadow:1px 1px 0 #000}
+.tag{font-size:9px;font-weight:bold;padding:0 3px;border:1px solid #000;background:var(--gold);color:#000}
+.new{color:red;font-weight:bold;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{visibility:hidden}}
+.post{display:flex;border:1px solid #000;margin:6px 0;background:#fffdf3}
+.post .who{width:130px;flex:none;background:var(--row2);border-right:1px solid #000;padding:6px;font-size:11px;text-align:center}
+.post .txt{padding:6px;flex:1} .post .hd{font-size:10px;color:#555;border-bottom:1px dotted #999;margin-bottom:4px}
+.av{width:64px;height:64px;margin:0 auto 4px;border:2px inset #999;background:#7ec850;image-rendering:pixelated;
+ background-image:linear-gradient(#5b8731 50%,#8b5a2b 50%)}
+.law li{margin-bottom:4px} .law{padding-left:20px;margin:4px 0}
+.shout{height:110px;overflow:auto;border:2px inset #999;background:#fff;padding:3px;font-size:11px}
+input[type=text],input[type=password],textarea,select{font:11px Verdana;border:2px inset #999;padding:2px;width:100%}
+button,.btn{font:bold 11px Verdana;background:linear-gradient(#fff,#ccc);border:2px outset #ddd;padding:2px 10px;cursor:pointer}
+button:active{border-style:inset}
+.counter{display:inline-block;background:#000;color:#0f0;font:bold 14px 'Courier New',monospace;padding:2px 6px;border:2px inset #888;letter-spacing:2px}
+.bar{background:#ddd;border:1px solid #000;height:12px} .bar i{display:block;height:100%;background:linear-gradient(#f8d500,#c40000)}
+#foot{background:#000;color:#ccc;text-align:center;padding:10px;font-size:10px;border-top:3px double var(--gold)}
+#foot a{color:var(--gold)}
+.badge{display:inline-block;border:1px solid #888;background:#222;color:#fff;font:bold 9px Arial;padding:2px 5px;margin:2px}
+@media(max-width:760px){#cols{flex-direction:column}#side{width:100%}#banner svg:last-child{display:none}#banner h1{font-size:28px}.post{flex-direction:column}.post .who{width:auto;border-right:0;border-bottom:1px solid #000}.wide{overflow-x:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="flag" viewBox="0 0 914 1721">
+  <rect width="914" height="1721" fill="#c40000"/>
+  <g fill="#f9d506">
+   <rect x="351" y="0" width="54" height="1721"/><rect x="510" y="0" width="53" height="1721"/>
+   <rect x="247" y="566" width="420" height="514"/>
+   <rect x="351" y="515" width="212" height="51"/><rect x="420" y="473" width="74" height="50"/>
+   <rect x="247" y="516" width="70" height="50"/><rect x="598" y="516" width="69" height="50"/>
+   <rect x="200" y="555" width="47" height="48"/><rect x="667" y="555" width="46" height="48"/>
+   <rect x="145" y="628" width="55" height="56"/><rect x="714" y="628" width="55" height="56"/>
+   <rect x="93" y="690" width="154" height="52"/><rect x="145" y="742" width="102" height="38"/>
+   <rect x="667" y="690" width="155" height="52"/><rect x="667" y="742" width="102" height="38"/>
+   <rect x="145" y="868" width="102" height="40"/><rect x="93" y="908" width="154" height="52"/><rect x="145" y="960" width="55" height="53"/>
+   <rect x="667" y="868" width="102" height="40"/><rect x="667" y="908" width="155" height="52"/><rect x="714" y="960" width="55" height="53"/>
+   <rect x="247" y="1080" width="70" height="50"/><rect x="598" y="1080" width="69" height="50"/>
+   <rect x="200" y="1037" width="47" height="48"/><rect x="667" y="1037" width="46" height="48"/>
+   <rect x="351" y="1080" width="212" height="51"/><rect x="420" y="1131" width="74" height="41"/>
+  </g>
+  <rect x="344" y="654" width="226" height="336" fill="#c40000"/><rect x="299" y="696" width="315" height="252" fill="#c40000"/>
+  <g fill="#f9d506"><rect x="344" y="739" width="226" height="167"/><rect x="385" y="700" width="144" height="244"/></g>
+ </symbol>
+</svg>
+
+<div id="wrap">
+ <div id="banner">
+  <svg viewBox="0 0 914 1721"><use href="#flag"/></svg>
+  <div>
+   <h1>H Y T H E</h1>
+   <p>~ The Official Homepage &amp; Community Forums of Hythe Island ~</p>
+   <p style="color:var(--gold)">Est. Day 1 &bull; Two Kings &bull; One Law &bull; One Island</p>
+  </div>
+  <svg viewBox="0 0 914 1721"><use href="#flag"/></svg>
+ </div>
+
+ <div id="nav">
+  <a href="#home">Home</a><a href="#forums">Forums</a><a href="#law">Hythe Law</a><a href="#docks">Docks</a><a href="#jippon">Jippon Bridge</a><a href="#members">Members</a><a href="#guestbook">Guestbook</a><a href="#login">Log In</a>
+ </div>
+ <div id="ticker"><marquee scrollamount="4">&#9733; WELCOME TO HYTHE! &#9733; All of Hythe Island is under the protection of the Crown &#9733; New docks open for trade &#9733; Read Hythe Law before you build! &#9733; Bridge to Jippon is OPEN &#9733; No griefing, no lava, no problem &#9733;</marquee></div>
+
+ <div id="cols">
+  <div id="main">
+
+   <div class="box" id="home">
+    <h2>&raquo; Welcome, Traveller!</h2>
+    <div class="in">
+     <p><b>Greetings and welcome to the official Hythe community board!</b> Hythe is a walled village on Hythe Island, ruled by <span class="king">TWO KINGS</span>, governed by <b>Hythe Law</b>, and connected to the mighty nation of <b>Jippon</b> by our very own bridge. The Crown claims the <u>entire island</u>. Yes, all of it.</p>
+     <p>Please <a href="#login">log in</a> or <a href="#login">register</a> to post. If you are new, read <a href="#law">Hythe Law</a> first. Your friendly mods are watching. <span class="new">NEW!</span> Docks expansion thread is up.</p>
+    </div>
+   </div>
+
+   <div class="box wide" id="forums">
+    <h2>&raquo; Forum Index</h2>
+    <table>
+     <tr><th width="55%">Forum</th><th>Last Post</th><th width="8%">Topics</th><th width="8%">Posts</th></tr>
+     <tr class="cat"><td colspan="4">&#9819; The Royal Court</td></tr>
+     <tr class="f"><td><b><a href="#thread">Royal Decrees</a></b><br><span class="sm">Official announcements from the Two Kings. Read only for peasants.</span></td><td class="sm">Today, 9:41 PM<br>by <span class="king">King ltgs55</span></td><td>14</td><td>212</td></tr>
+     <tr class="f"><td><b><a href="#law">Hythe Law &amp; Justice</a></b><br><span class="sm">Trials, disputes, fines and banishments.</span></td><td class="sm">Yesterday, 4:12 PM<br>by <span class="mod">Sheriff_Bob</span></td><td>31</td><td>498</td></tr>
+     <tr class="cat"><td colspan="4">&#9962; Village Square</td></tr>
+     <tr class="f"><td><b><a href="#thread">General Discussion</a></b> <span class="new">HOT</span><br><span class="sm">Talk about anything Hythe. Keep it civil.</span></td><td class="sm">Today, 10:03 PM<br>by CreeperSlayer99</td><td>207</td><td>3,142</td></tr>
+     <tr class="f"><td><b><a href="#forums">Build Showcase</a></b><br><span class="sm">Show off your houses, farms and walls. Screenshots welcome!</span></td><td class="sm">Today, 6:30 PM<br>by xX_Mason_Xx</td><td>88</td><td>901</td></tr>
+     <tr class="f"><td><b><a href="#forums">Infrastructure &amp; Walls</a></b><br><span class="sm">Roads, rails, lighting, gates, and the Great Wall of Hythe.</span></td><td class="sm">Sept 12, 2:20 PM<br>by RedstoneRick</td><td>46</td><td>377</td></tr>
+     <tr class="cat"><td colspan="4">&#9875; Docks &amp; Diplomacy</td></tr>
+     <tr class="f"><td><b><a href="#docks">Harbour Master's Office</a></b><br><span class="sm">Ships, cargo, trade deals and dock permits.</span></td><td class="sm">Today, 1:15 PM<br>by DockWorker_Tom</td><td>52</td><td>640</td></tr>
+     <tr class="f"><td><b><a href="#jippon">Jippon Relations</a></b> <span class="tag">NEW</span><br><span class="sm">Bridge traffic, trade and friendship with our neighbours. Yoroshiku!</span></td><td class="sm">Today, 8:00 AM<br>by Sakura_Chan</td><td>23</td><td>288</td></tr>
+     <tr class="cat"><td colspan="4">&#9786; Off Topic</td></tr>
+     <tr class="f"><td><b><a href="#forums">The Tavern</a></b><br><span class="sm">Memes, other games, music, and general nonsense.</span></td><td class="sm">Today, 10:22 PM<br>by n00bSlayer</td><td>119</td><td>2,006</td></tr>
+    </table>
+   </div>
+
+   <div class="box" id="thread">
+    <h2>&raquo; Hot Thread: "Who really owns the island? (Answer: The Kings)"</h2>
+    <div class="in">
+     <div class="post"><div class="who"><div class="av"></div><span class="king">King ltgs55</span><br><span class="tag">KING</span><br><span class="sm">Posts: 1,204<br>Joined: Day 1</span></div>
+      <div class="txt"><div class="hd">Posted: Today, 9:41 PM &nbsp;|&nbsp; Post subject: Royal Decree #12</div>
+      Hear ye, hear ye! By order of both Crowns, the <b>entire Hythe Island</b> is hereby claimed for Hythe. Anyone building beyond the walls must register with the Sheriff. Bridges to other lands must pass inspection. That is all. <i>God save Hythe!</i></div></div>
+     <div class="post"><div class="who"><div class="av"></div><span class="king">King Berryeaterr</span><br><span class="tag">KING</span><br><span class="sm">Posts: 1,187<br>Joined: Day 1</span></div>
+      <div class="txt"><div class="hd">Posted: Today, 9:52 PM &nbsp;|&nbsp; Post subject: Re: Royal Decree #12</div>
+      Seconded. Also, the new walls are looking excellent. Nobody has died to a zombie inside the gates in three weeks. Good work, everyone!</div></div>
+     <div class="post"><div class="who"><div class="av"></div><b>CreeperSlayer99</b><br><span class="sm">Villager<br>Posts: 342<br>Joined: Week 2</span></div>
+      <div class="txt"><div class="hd">Posted: Today, 10:03 PM &nbsp;|&nbsp; Post subject: Re: Royal Decree #12</div>
+      lol long live the kings. btw whoever keeps stealing the hay bales from the dock, i see you. Also can we get more torches on the bridge road?? its spooky at night</div></div>
+    </div>
+   </div>
+
+   <div class="box" id="law">
+    <h2>&raquo; HYTHE LAW (Stickied - Please Read!)</h2>
+    <div class="in">
+     <ol class="law">
+      <li><b>Respect the Crown.</b> Both Kings have equal authority. Do not try to play them against each other. (We know.)</li>
+      <li><b>No griefing.</b> Do not break, burn, blow up or "borrow" another villager's build.</li>
+      <li><b>No lava, TNT or fire</b> within the walls unless approved by the Sheriff.</li>
+      <li><b>The island is Hythe's.</b> Build outside the walls only with a permit.</li>
+      <li><b>Keep the docks clear.</b> Boats belong in slips, not in the middle of the harbour.</li>
+      <li><b>Chests are private.</b> Steal from one and face a royal trial.</li>
+      <li><b>Be kind to visitors,</b> especially our friends from Jippon.</li>
+      <li><b>No spamming</b> the forum, the shoutbox or the server chat.</li>
+     </ol>
+     <p class="sm">Punishments range from a warning, to a fine, to banishment beyond the bridge. Kings' decisions are final. Mostly.</p>
+    </div>
+   </div>
+
+   <div class="box" id="docks">
+    <h2>&raquo; The Hythe Docks</h2>
+    <div class="in">
+     <p>Our docks are the heart of Hythe trade. Ships come and go all day, fishermen unload their catch, and the Harbour Master keeps the ledger. Berths are free for citizens. Foreign ships must ask permission first.</p>
+     <table>
+      <tr><th>Berth</th><th>Status</th><th>Cargo</th></tr>
+      <tr><td>Dock A</td><td>Open</td><td>Fish, kelp</td></tr>
+      <tr><td>Dock B</td><td>Busy</td><td>Wood, wool</td></tr>
+      <tr><td>Dock C</td><td>Under construction <span class="new">!</span></td><td>Emeralds (soon)</td></tr>
+     </table>
+    </div>
+   </div>
+
+   <div class="box" id="jippon">
+    <h2>&raquo; The Bridge to Jippon &#26085;&#26412;</h2>
+    <div class="in">
+     <p>Hythe is proud to be linked to <b>Jippon</b> by our great stone bridge, an achievement of engineering and stubbornness. The bridge is lit, walled and patrolled. Travellers may cross freely in peace. Trade goods, share screenshots, and make new friends.</p>
+     <p>Bridge status: <b style="color:green">&#9679; OPEN</b> &nbsp;|&nbsp; Toll: <b>Free (be nice)</b> &nbsp;|&nbsp; Length: <b>Long</b></p>
+    </div>
+   </div>
+
+   <div class="box" id="members">
+    <h2>&raquo; Notable Members</h2>
+    <div class="in wide">
+     <table>
+      <tr><th>Username</th><th>Rank</th><th>Posts</th><th>Joined</th></tr>
+      <tr><td class="king">King ltgs55</td><td>King</td><td>1,204</td><td>Day 1</td></tr>
+      <tr><td class="king">King Berryeaterr</td><td>King</td><td>1,187</td><td>Day 1</td></tr>
+      <tr><td class="mod">Sheriff_Bob</td><td>Moderator</td><td>640</td><td>Day 3</td></tr>
+      <tr><td>DockWorker_Tom</td><td>Harbour Master</td><td>355</td><td>Week 1</td></tr>
+      <tr><td>Sakura_Chan</td><td>Jippon Envoy</td><td>288</td><td>Week 3</td></tr>
+      <tr><td>CreeperSlayer99</td><td>Villager</td><td>342</td><td>Week 2</td></tr>
+     </table>
+    </div>
+   </div>
+
+   <div class="box" id="guestbook">
+    <h2>&raquo; Sign the Guestbook!</h2>
+    <div class="in">
+     <p class="sm">Visitors, leave your mark! (Demo form: this page has no server behind it.)</p>
+     <table>
+      <tr><td width="90"><b>Name:</b></td><td><input type="text" placeholder="Your Minecraft name"></td></tr>
+      <tr><td><b>From:</b></td><td><select><option>Hythe</option><option>Jippon</option><option>Somewhere else</option></select></td></tr>
+      <tr><td><b>Message:</b></td><td><textarea rows="3"></textarea></td></tr>
+     </table>
+     <p><button type="button">Sign It!</button> <button type="reset">Clear</button></p>
+     <p class="sm"><b>Mason:</b> nice walls!!! 10/10 would build again<br><b>Sakura_Chan:</b> Arigatou for the bridge lights~<br><b>n00bSlayer:</b> first!!!</p>
+    </div>
+   </div>
+  </div>
+
+  <div id="side">
+   <div class="box">
+    <h2>&raquo; Our Flag</h2>
+    <div class="in" style="text-align:center"><svg viewBox="0 0 914 1721" style="width:110px;border:2px ridge var(--gold)"><use href="#flag"/></svg><br><span class="sm">The Sun-Crown of Hythe</span></div>
+   </div>
+   <div class="box" id="login">
+    <h2>&raquo; Member Login</h2>
+    <div class="in">
+     Username:<br><input type="text"><br>Password:<br><input type="password"><br>
+     <label class="sm"><input type="checkbox"> Log me on automatically</label><br>
+     <button type="button">Log In</button><br>
+     <span class="sm"><a href="#login">Register</a> | <a href="#login">Forgot password?</a></span>
+    </div>
+   </div>
+   <div class="box">
+    <h2>&raquo; Shoutbox</h2>
+    <div class="in">
+     <div class="shout"><b>Mason:</b> whos online<br><b>Sheriff_Bob:</b> me. behave.<br><b>Sakura_Chan:</b> konnichiwa!<br><b>n00bSlayer:</b> lol<br><b>King ltgs55:</b> Court at sundown.<br><b>Tom:</b> new boat at Dock B</div>
+     <input type="text" placeholder="say something..."><button type="button">Shout</button>
+    </div>
+   </div>
+   <div class="box">
+    <h2>&raquo; Poll of the Week</h2>
+    <div class="in sm">
+     <b>What should we build next?</b><br>
+     Bigger docks<div class="bar"><i style="width:62%"></i></div>
+     Watchtowers<div class="bar"><i style="width:28%"></i></div>
+     A second bridge<div class="bar"><i style="width:45%"></i></div>
+     <p>Total votes: 41</p>
+    </div>
+   </div>
+   <div class="box">
+    <h2>&raquo; Who's Online</h2>
+    <div class="in sm">7 Villagers, 2 Kings, 1 Moderator<br><span class="king">King ltgs55</span>, <span class="king">King Berryeaterr</span>, <span class="mod">Sheriff_Bob</span>, Tom, Mason, Sakura_Chan...<br><br>Most ever online: <b>23</b></div>
+   </div>
+   <div class="box">
+    <h2>&raquo; Village Stats</h2>
+    <div class="in sm">Population: <b>Growing</b><br>Walls: <b>Complete</b><br>Infrastructure: <b>Decent+</b><br>Island claimed: <b>100%</b><br>Bridges: <b>1 (Jippon)</b></div>
+   </div>
+  </div>
+ </div>
+
+ <div id="foot">
+  <p>You are visitor number <span class="counter">004217</span></p>
+  <p><span class="badge">BEST VIEWED IN 1024x768</span><span class="badge">MADE WITH NOTEPAD</span><span class="badge">HYTHE WEBRING &laquo; &raquo;</span><span class="badge">NO GRIEFERS</span></p>
+  <p>&copy; 2006 Hythe Island Community. All rights reserved by the Crown.<br>Not affiliated with Mojang. Minecraft is a trademark of its respective owner.</p>
+  <p><a href="#home">Back to top</a> | <a href="#law">Rules</a> | <a href="#guestbook">Contact the Kings</a></p>
+ </div>
+</div>
+</body>
+</html>
